@@ -21,8 +21,15 @@ class UserServiceProvider extends ServiceProvider
                 [
                     'name' => 'Renzo Toledo',
                      'gender' => 'Male',
-                    'age' => '21'
-                ]
+                    'age' => '20'
+                ],
+                [
+                    'name' =>'Joshua Bernardino',
+                     'gender' => 'Male',
+                    'age' => '22'
+                ],
+      
+           
                 ];
                 return new UserService($users);
 
