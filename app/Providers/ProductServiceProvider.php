@@ -39,6 +39,6 @@ class ProductServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        view()->share('productKey', 'keyfi');
+        view()->share('productKey', 'Lontoc');
     }
 }

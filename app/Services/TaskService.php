@@ -8,7 +8,7 @@ class TaskService{
         $this->task [] =$name;
     }
 
-    public function getAlltask($name) {
+    public function getAlltask() {
         return $this->task;
     }
 }
