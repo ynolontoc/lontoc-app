@@ -9,8 +9,12 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['name'=>'Lontoc App']);
 });
+
+Route::get('/users', [UserController::class,'index']);
+
+Route::resource('/products', ProductController::class );
 
 Route::get('test-container', function (Request $request) {
     return $request->input('key');
@@ -41,7 +45,7 @@ Route::get('search/{search}', function (string $search) {
 Route::get('test/route/sample', function () {
     return route('test-route');
 })->name('test-route');
-
+/*
 Route::middleware(['user-middleware'])->group(function () {
     Route::get('route-middleware-group/first', function (Request $request) {
         echo 'first';
@@ -51,7 +55,7 @@ Route::middleware(['user-middleware'])->group(function () {
         echo 'second';
     });
 });
-
+*/
 Route::controller(UserController::class)->group(function () {
     Route::get('users', 'index');
     Route::get('users/first', 'first');
@@ -66,9 +70,9 @@ Route::post('token', function (Request $request) {
     return $request->all();
 });
 
-Route::get('users', [UserController::class, 'index'])->middleware('user-middleware');
+//Route::get('users', [UserController::class, 'index'])->middleware('user-middleware');
 
-Route::resource('products', ProductController::class);
+//Route::resource('products', ProductController::class);
 
 Route::get('product-list', function (ProductService $productService) {
     $data['products'] = $productService->listProducts();

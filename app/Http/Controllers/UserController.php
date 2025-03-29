@@ -9,7 +9,7 @@ use PhpParser\Builder\Function_;
 class UserController extends Controller
 {
     public function index(UserService $userService) {
-        return $userService->listUsers();
+        return view('users.index',['users' =>$userService->ListUsers()]);
     }
     public function first(UserService $userService){
     $user = collect($userService->listUsers())-first();

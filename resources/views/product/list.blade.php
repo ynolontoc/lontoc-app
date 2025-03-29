@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 
 <body>
-    <p>Products; </p>
+    <p>Products: </p>
     <table>
         <thead>
             <tr>
                 @foreach (['Id', 'Name', 'Category'] as $column)
-                <td>({{ $column }})</td>
+                <td>{{$column}}</td>
                 @endforeach
             </tr>
         </thead>
         <tbody>
             @foreach ($products as $product)
             <tr>
-                <td>({{$product['id']}})</td>
-                <td>({{$product['name']}})</td>
-                <td>({{$product['category']}})</td>
+                <td>{{$product['id']}}</td>
+                <td>{{$product['name']}}</td>
+                <td>{{$product['category']}}</td>
             </tr>
             @endforeach
         </tbody>

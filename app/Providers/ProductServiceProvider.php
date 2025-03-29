@@ -28,7 +28,7 @@ class ProductServiceProvider extends ServiceProvider
                     'id' => 3,
                     'name' => 'Sardines',
                     'category' => 'Canned Foods'
-                ],
+                ]
             ];
             return new ProductService($products);
         });
